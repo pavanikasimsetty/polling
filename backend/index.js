@@ -11,7 +11,7 @@ const app = express();
 const server = http.createServer(app);
 const io = socketIo(server, {
   cors: {
-    origin: 'https://vercel.com/pavanikasimsettys-projects/polling-rxl5-api/DnWeQaJzRQq9xhroLY2VkHv9K3nR', // Adjust this to your frontend URL
+    origin: 'https://polling-rxl5-api.vercel.app/', // Adjust this to your frontend URL
     methods: ['GET', 'POST'],
     credentials: true
   }
