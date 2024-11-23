@@ -9,7 +9,7 @@ function TeacherLogin() {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        const response = await fetch("https://polling-chi.vercel.app/api/auth/login", {
+        const response = await fetch("https://polling-9wz4-backend.vercel.app/api/auth/login", {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

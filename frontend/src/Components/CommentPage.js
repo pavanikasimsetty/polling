@@ -21,7 +21,7 @@ const CommentPage = () => {
   
 
   useEffect(() => {
-    const newSocket = io('https://vercel.com/pavanikasimsettys-projects/polling-9wz4-backend/');
+    const newSocket = io('https://polling-9wz4-backend.vercel.app/');
     setSocket(newSocket);
 
     return () => {
@@ -57,7 +57,7 @@ window.location.href = '/studentdashboard';      }
   useEffect(() => {
     const fetchPoll = async () => {
       try {
-        const response = await fetch(`https://vercel.com/pavanikasimsettys-projects/polling-9wz4-backend/api/polls/${pollId}`);
+        const response = await fetch(`https://polling-9wz4-backend.vercel.app/api/polls/${pollId}`);
         if (response.ok) {
           const data = await response.json();
           setPoll(data.poll);
@@ -75,7 +75,7 @@ window.location.href = '/studentdashboard';      }
   useEffect(() => {
     const fetchComments = async () => {
       try {
-        const response = await fetch(`https://vercel.com/pavanikasimsettys-projects/polling-9wz4-backend/api/comments/${pollId}`);
+        const response = await fetch(`https://polling-9wz4-backend.vercel.app/api/comments/${pollId}`);
         if (response.ok) {
           const data = await response.json();
           setComments(data.data);
@@ -93,7 +93,7 @@ window.location.href = '/studentdashboard';      }
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch('https://vercel.com/pavanikasimsettys-projects/polling-9wz4-backend/api/comments', {
+      const response = await fetch('https://polling-9wz4-backend.vercel.app/api/comments', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -118,7 +118,7 @@ window.location.href = '/studentdashboard';      }
     const fetchPollPercentages = async () => {
       try {
         // Fetch poll percentages
-        const response = await fetch(`https://vercel.com/pavanikasimsettys-projects/polling-9wz4-backend/api/pollResponses/${pollId}`);
+        const response = await fetch(`https://polling-9wz4-backend.vercel.app/api/pollResponses/${pollId}`);
         if (!response.ok) {
           throw new Error('Failed to fetch poll percentages');
         }
@@ -192,7 +192,7 @@ window.location.href = '/studentdashboard';      }
         console.log(userIds);
         const usernameData = await Promise.all(
           userIds.map(async userId => {
-            const response = await axios.get(`https://vercel.com/pavanikasimsettys-projects/polling-9wz4-backend/api/studentauth/getusername/${userId}`);
+            const response = await axios.get(`https://polling-9wz4-backend.vercel.app/api/studentauth/getusername/${userId}`);
             return { [userId]: response.data.username };
           })
         );
